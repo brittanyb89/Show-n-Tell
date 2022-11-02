@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css" />
-    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Show 'N' Tell Code Quiz</title>
     <!--Added favicon-->
     <link rel="icon" type="image/x-icon" href="./images/owl.jpg">
 
   </head>
   <body>
+    <!-- Used nav class from week 4's class work to set the nav bar with timer -->
+    <nav class="container mx-auto mt-4 text-center">
+      <ul class="flex justify-center gap-x-4">
+        <li>
+          <a href="./images/timer.png">timer</a>
+        </li>
+      </ul>
+    <!-- Added display to countdown timer in an element -->
+          <p id="timer"></p>
+          <!-- Need to get timer to appear on page -->
+    <!-- Referenced from bbbootstrap.com/snippets/bootstrap-multiple-choice-questions-quiz-template-61362362 -->
+    <div class="container mt-sm-5 my-1">
     <script src="./script.js"></script>
   </body>
 </html>
