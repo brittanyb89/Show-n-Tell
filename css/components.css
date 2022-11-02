@@ -1,0 +1,14 @@
+/* Copied week 4 example to see effects */
+@layer components {
+  .switch {
+    @apply relative flex h-8 w-16 items-center justify-center gap-x-20 rounded-full bg-gray-200 transition-colors;
+  }
+
+  .switch input {
+    @apply absolute h-0 w-0 opacity-0;
+  }
+
+  .slider {
+    @apply absolute inset-0 h-8 w-8 transform rounded-full bg-white shadow transition-transform before:absolute before:rounded-full before:shadow before:transition-transform peer-checked:translate-x-8 peer-checked:transform;
+  }
+}
