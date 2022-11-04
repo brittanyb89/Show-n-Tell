@@ -1,8 +1,8 @@
 // This page will need to display timer and each question one by one.
 // TODO: Diplay timer on screen to count down
-function updateTimer() {
-  future = Time.parse ("00:05:00");
-  console.log(updateTimer)
+// function updateTimer() {
+//   future = Time.parse ("00:05:00");
+//   console.log(Timer)
   // now = new Time();
   // diff = future - now;
 }
