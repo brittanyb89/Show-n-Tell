@@ -5,7 +5,7 @@
 //   console.log(Timer)
   // now = new Time();
   // diff = future - now;
-}
+// }
 
 // TODO: Display Question #1 with the option to select an answer
 
