@@ -1,6 +1,6 @@
 :root {
-  --bs-primary: #0d6efd;
-  --bs-info: #0dcaf0;
+  --bg-primary: #0d6efd;
+  --bg-info: #0dcaf0;
   --bs-success: #198754;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
@@ -9,5 +9,5 @@
 };
 
 .navbar {
-  background-color: var(--bs-info);
+  background-color: var(--bg-info);
 }
