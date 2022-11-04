@@ -41,12 +41,11 @@
     <a class="click" type="display" href="#">View My Score</a>
 
 <!-- Input value to save initials and score -->
-    <form>
-      <label for="initials">My Initials</label><br>
-      <input type="text" id="initials" name="my_initials"><br>
-      <label for="score">My Score</label><br>
-      <input type="text" id="score" name="my_score">
-    </form>
+<div class="input-group">
+  <span class="input-group-text">Initials and score</span>
+  <input type="text" aria-label="Initials" class="form-control">
+  <input type="text" aria-label="score" class="form-control">
+</div>
 
       <button class="button" type="submit">Save My Score</button>
     <script src="./script.js"></script>
