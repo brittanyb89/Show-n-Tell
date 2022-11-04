@@ -1,6 +1,6 @@
 :root {
-  --bg-primary: #0d6efd;
-  --bg-info: #0dcaf0;
+  --bs-primary: #0d6efd;
+  --bs-info: #0dcaf0;
   --bs-success: #198754;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
@@ -8,6 +8,7 @@
   --bs-body-font-family: var(--bs-font-sans-serif);
 };
 
-.navbar {
-  background-color: var(--bg-info);
+/* Changed page background-color */
+body {
+  background-color: #0dcaf0;
 }
