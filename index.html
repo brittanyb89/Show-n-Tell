@@ -19,6 +19,7 @@
     <link rel="icon" type="image/x-icon" href="./images/owl.jpg">
 <!-- Navbar with timer (does not show time until test) -->
   </head>
+  <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">New High Score</a>
@@ -37,15 +38,18 @@
       </div>
     </div>
   </nav>
+  <main class="flex flex-col items-center gap-y-4">
 <!-- Owl image on main page -->
   <img src="./images/owl.jpg" alt="timer">
   <h1>READY....SET.....LET'S GOOOO!</h1>
-  <body>
-
-    <h2>You are allowed 4 minutes to answer 4 questions. Try and finish before the time runs out! Click start to begin. Good luck!</h2>
-
+  <section id="intropage">
+    <p class="max-auto max-w-prose">
+      <h2>You have 3 random questions to answer correctly. Try and finish before the time runs out! Click start to begin. Good luck!</h2>
+    </p>
 <!-- When this button is clicked, it moves to new page to start quiz-->
     <button type="button" class="btn btn-primary">START NOW</button>
+  </section>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script
