@@ -7,3 +7,7 @@
   --bs-light: #f8f9fa;
   --bs-body-font-family: var(--bs-font-sans-serif);
 };
+
+.navbar {
+  background-color: var(--bs-info);
+}
