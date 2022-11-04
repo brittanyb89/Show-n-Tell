@@ -17,9 +17,27 @@
     <title>Show 'N' Tell Code Quiz</title>
     <!--Added favicon-->
     <link rel="icon" type="image/x-icon" href="./images/owl.jpg">
-
+<!-- Navbar with timer (does not show time until test begins) -->
   </head>
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">New High Score</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <span class="navbar-text">
+          <img src="../../images/timer.png" alt="timer" width="30" height="30" class="d-inline-block align-text-top">
+        </span>
+        <p>Remaining Time: &nbsp; <span
+          id="seconds"
+          class="ml-2 text-lg font-medium"></span></p>
+      </div>
+    </div>
+  </nav>
+  <!-- <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="./images/timer.png" alt="" width="30" height="27" class="d-inline-block align-text-top">
@@ -29,7 +47,7 @@
   </nav>
   <img src="./images/owl.jpg" alt="timer">
   <h1>READY....SET.....LET'S GOOOO!</h1>
-  <body>
+  <body> -->
 
     <h2>You are allowed 4 minutes to answer 4 questions. Try and finish before the time runs out! Click start to begin. Good luck!</h2>
 
