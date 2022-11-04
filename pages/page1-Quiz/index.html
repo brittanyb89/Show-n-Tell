@@ -36,27 +36,21 @@
   </div>
 </nav>
 
-<!-- Get timer to start and display first question while the others are hidden-->
+<!-- Get timer to start (Javascript) and display first question while the others are hidden-->
 <body>
   <main class="flex flex-col items-center gap-y-4">
     <h1>Please answer the following question:</h1>
-<!-- Hidden until the quiz starts -->
-    <section id="begin">
-      <p class="max-auto max-w-prose">
-        <h2>Question #1:</h2>
+<!-- Hidden until the quiz starts (leave empty for javascript)-->
+    <section id="begin" class="hidden">
+      <h2>Question #1:</h2>
+      <ul>
         JavaScript is a high-level dynamic programming language that allows users to interact with websites. With JavaScript, you can power your websites with effects, interactivity, data communication, and much more.
-      </p>
+      </ul>
+    <!-- Show if answer is correct or wrong -->
+    <p class="hidden w-full border-t-2 pt-2 text-center text-lg font-semibold"></p>
     </section>
   </main>
 </body>
-
-
-  <!-- get timer to start running once test starts -->
-
-
-
-
-    <p></p>
 
 <!-- Added radio button to include true or false options on page -->
     <form>
