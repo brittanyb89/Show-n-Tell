@@ -1,11 +1,19 @@
-:root {
-  --bs-primary: #0d6efd;
-  --bs-info: #0dcaf0;
-  --bs-success: #198754;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-body-font-family: var(--bs-font-sans-serif);
+@import url ("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+
+* {
+  font-family: 'Noto Sans TC', sans-serif;
 };
 
-/* Position page contents to center */
+html, body {
+  height: 100%;
+};
+
+body {
+  background-attachment: fixed;
+  background-color: aliceblue;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+};
