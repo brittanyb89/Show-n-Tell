@@ -17,3 +17,16 @@ body {
   display: flex;
   flex-direction: column;
 };
+
+main {
+  flex:auto;
+};
+
+/* hidden questions */
+#questions,
+#final_answer,
+#high_scores,
+#correctwrong {
+  display: none;
+};
+
