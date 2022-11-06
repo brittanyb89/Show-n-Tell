@@ -3,6 +3,7 @@
 :root {
   --main-bg-color: rgb(160, 195, 226);
   --secondary-bg-color: rgb(71, 179, 71);
+  --ternary-bg-color: rgb(241, 243, 243);
 }
 
 * {
@@ -17,7 +18,7 @@ html {
 }
 
 header {
-  background-color: rgb(217, 219, 219);
+  background-color: var(--ternary-bg-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
