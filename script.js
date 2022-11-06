@@ -133,4 +133,61 @@ function checkAnswer(event) {
 }
 
 // set function to add score
-function
+function addScore(event) {
+  event.preventDefault();
+
+  finalAns.style.display ='none';
+  newScore.style.display = 'block';
+
+  const init = initialsInput.value.toUpperCase();
+  highScore.push ({ initials: init, score: secondsRemaining});
+
+  highScore = highScore.ariaSort((a, b) => {
+    if (a.score > b.score) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+
+  highScore.innerHTML="";
+  for (let i = 0; i < highScore.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = `${highScore[i].initials}: ${highScore[i].score}`;
+    highScore.append(li);
+  }
+
+  storeScores();
+  displayScores();
+}
+
+function storeScores() {
+  localStorage.setItem("highscores", JSON.stringify(highScore));
+}
+
+function displayScores() {
+  const storedHighScores = JSON.parse(localStorage.getItem("highScores"));
+  if(storedHighScores !== null) {
+    highScore = storedHighScores;
+  }
+}
+
+function clearScores() {
+  localStorage.clear();
+  highScore.innerHTML="";
+}
+
+answerBtn1.forEach(item => {
+  item.addEventListener('click', checkAnswer);
+});
+
+submitBtn.addEventListener('click', addScore);
+
+viewScore.addEventListener('click', () => {
+  if (newScore.style.display === 'none') {
+    newScore.style.display = 'block';
+  } else if (newScore.style.display === 'block') {newScore.style.display = 'none';
+}else {
+  return alert ("No new high scores!");
+}
+});
