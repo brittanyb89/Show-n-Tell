@@ -47,11 +47,45 @@
             </p>
           </div>
         </section>
+        <section id="questions">
+          <div class="row">
+            <div class="col-6">
+              <!-- hidden questions until test starts -->
+              <h2 id="question"></h2>
+              <ul>
+                <li class="mb-3"><button id="answer1" value="0" type="button" class="btn btn-success answerBtn1">Answer1</button></li>
+                <li class="mb-3"><button id="answer2" value="1" type="button" class="btn btn-success answerBtn2">Answer2</button></li>
+                <li class="mb-3"><button id="answer3" value="2" type="button" class="btn btn-success answerBtn3">Answer3</button></li>
+                <li class="mb-3"><button id="answer4" value="3" type="button" class="btn btn-success answerBtn4">Answer4</button></li>
+              </ul>
+              <div id="correctwrong" class="font-weight-light font-semibold">
+                <hr>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="final_answer">
+          <div class="row">
+            <div class="col-6">
+              <h2>Complete!</h2>
+              <p>Your new score: <span class="new_score" class="pl-1">0</span></p>
+              <p>Enter your initials: <span class="ml-1"><input placeholder="initials" id="initials" /></span><button id="save_my_score" class="btn btn-success mx-1 my-1 d-inline-block">Submit</button></p>
+            </div>
+          </div>
+        </section>
+        <section id="high_scores">
+          <div class="row">
+            <div class="col-6">
+              <h2>High Scores</h2>
+              <ol id="score-list"></ol>
+              <button id="save" class="btn btn-success d-inline-block mx-1 my-1">Save My Score</button>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
-
-
+<!-- javascript links -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
