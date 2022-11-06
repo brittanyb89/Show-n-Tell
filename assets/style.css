@@ -10,20 +10,11 @@
   padding: 0;
 }
 
-html, body {
+html {
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 18px;
   height: 100%;
-};
-
-body {
-  background-color: rgb(114, 151, 184);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-};
+}
 
 main {
   flex:auto;
