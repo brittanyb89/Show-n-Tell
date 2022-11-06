@@ -13,10 +13,17 @@ const secondsRemaining = 75;
 const highScore = document.querySelector("#score");
 
 // Question section
-const questionNum1 = document.querySelector("#question1");
+const questionsNum1 = document.querySelector("#question1");
+const questionNum1 = document.querySelector("#question");
 
 // Number of questions answered
 const questionCount = 0;
+
+// div correct/wrong
+const correctWrong = document.querySelector("#yes_or_no");
+
+// section for final section
+const finalAns = document.querySelector("#finished");
 
 // User initals input
 const initialsInput = document.querySelector("#initals");
@@ -57,5 +64,30 @@ const questions = [
     correctAnswers: "1"
   }
 ];
+
+// Function for timer
+function setTimer() {
+  const timerInterval = setInterval( () => {
+    secondsRemaining--;
+    timer.textContent = `Time:${secondsRemaining}s`;
+
+    if (secondsRemaining === 0 || questionCount === questions.length) {
+      clearInterval(timerInterval);
+      questionsNum1.style.display = "none";
+      finalAns.style.display = "block";
+      highScore.textContent = secondsRemaining;
+
+    }
+  }, 1000);
+}
+
+// Quiz starts with timer and question
+function startbtn() {
+  questionNum1.style.display = "block";
+  questionCount = 0;
+
+  setTimer();
+  setQuestion(questionCount);
+}
 
 
