@@ -30,7 +30,7 @@ main {
   display: none;
 };
 
-ul.nobullets {
+li.nobullets {
   list-style-type: none;
 };
 
