@@ -1,11 +1,3 @@
-// Start button will take user to next page with test questions
-const startbtn = document.querySelector("button");
-
-startbtn.addEventListener("click", () => {
-  window.location.href="./pages/page1-Quiz/index.html";
-  console.log(button)
-});
-
 // Once test is started, first question appears with choices, and timer starts
 // Variables for time and score
 const timer = document.querySelector("quizTimer");
@@ -33,11 +25,26 @@ const highScores = document.querySelector("#highscores");
 const newScores = document. querySelector("#new-score");
 const newScore= [];
 
+// Start button will take user to next page with test questions
+const startbtn = document.querySelector("button");
+
 // Answer buttons
 const answerbtns = document.querySelectorAll("answerbtns");
-const answerbtn1 = document.querySelector("#answer1");
-const answerbtn2 = document.querySelector("#answer2");
-const answerbtn3 = document.querySelector("#answer3");
+const answerBtn1 = document.querySelector("#answer1");
+const answerBtn2 = document.querySelector("#answer2");
+const answerBtn3 = document.querySelector("#answer3");
+const answerBtn4 = document.querySelector("#answer4");
+
+// submit, finish, and view my score buttons
+const submitBtn = document.querySelector("submit");
+const finishBtn= document.querySelector("finish");
+const viewScore = document.querySelector("view_my_score")
+
+// event listener to activate start button
+startbtn.addEventListener("click", () => {
+  window.location.href="./pages/page1-Quiz/index.html";
+  console.log(button)
+});
 
 // Question and answer objects
 const questions = [
@@ -90,4 +97,40 @@ function startbtn() {
   setQuestion(questionCount);
 }
 
+// function to set questions
+function setQuestion(id) {
+  if (id < questions.length) {
+    questionNum1.textContent = questions[id].question;
+    answerbtn1.textContent = questions [id].answers[0];
+    answerbtn2.textContent = questions [id].answers[1];
+    answerbtn3.textContent = questions [id].answers[2];
+    answerbtn4.textContent = questions [id].answers[3];
+  }
+}
 
+// checks answer and move on to the question
+function checkAnswer(event) {
+  event.preventDefault();
+
+  correctWrong.style.display = "block";
+  const p = document.createElement("p");
+  correctWrong.appendChild(p);
+
+  setTimeout( () => {
+    p.style.display = "none";
+  }, 1000);
+
+  if (questions[questionCount].correctAnswers === event.target.value) {
+    p.textContent = "Correct!";
+  } else if (questions[questionCount].correctAnswers !== event.target.value) {
+    secondsRemaining = secondsRemaining - 10;
+    p.textContent = "Wrong!";
+  }
+  if (questionCount < questions.length) {
+    questionCount++;
+  }
+  setQuestion(questionCount);
+}
+
+// set function to add score
+function
