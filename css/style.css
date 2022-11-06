@@ -30,3 +30,22 @@ main {
   display: none;
 };
 
+ul.nobullets {
+  list-style-type: none;
+};
+
+.answerBtn,
+.answerBtn:active,
+.answerBtn:active:focus,
+.answerBtn:focus,
+.answerBtn:hover {
+  background-color: green;
+  box-shadow: none;
+  outline: none;
+};
+
+/* media query to allow adjustment to screen on mobile, desktop, tablet, etc. */
+@media screen and (max-width:650px) html {
+  font-size: 12px;
+}
+
