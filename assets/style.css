@@ -1,7 +1,7 @@
 @import url ("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 
 :root {
-  --main-bg-color: rgb(160, 195, 226);
+  --main-bg-color: rgb(255, 255, 255);
   --secondary-bg-color: rgb(71, 179, 71);
   --ternary-bg-color: rgb(241, 243, 243);
 }
@@ -27,7 +27,8 @@ header {
 }
 
 main {
-  flex:auto;
+  background-color: var(--main-bg-color);
+  flex: auto;
 };
 
 /* hidden questions */
