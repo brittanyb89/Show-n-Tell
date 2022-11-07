@@ -40,6 +40,7 @@
 <!-- Intro page: main section of page with image -->
     <main>
       <div class="container">
+
         <section id="intro">
           <div class="row">
             <div class="col-3"></div>
@@ -50,10 +51,23 @@
                 To get the new highest score, answer as many random questions as you can correctly. Try and finish before the time runs out! Click start to begin. Good luck!
               </p>
               <!-- When this button is clicked, it moves to new page to start quiz-->
-              <button onclick="window.location='./pages/page1-Quiz/quiz.html';" id="startBtn" type="button" class="btn btn-primary" value="startQuiz">START NOW</button>
+              <button id="startBtn" type="button" class="btn btn-primary">START NOW</button>
+              <button id="startHighScore" onclick="showScores()" type="button">High Scores</button>
             </div>
           </div>
         </section>
+
+        <section id="startquiz" class="hidden">
+          <div id="timer">Remaining Time: </div>
+            <div id="questions"><p>Q&A Placeholder</p></div>
+              <button id="answer1" value="0" type="button" onclick="checkAnswer('Answer1')">Answer1</button>
+              <button id="answer2" value="1" type="button" onclick="checkAnswer('Answer2')">Answer1</button>
+              <button id="answer3" value="2" type="button" onclick="checkAnswer('Answer3')">Answer1</button>
+              <button id="answer4" value="3" type="button" onclick="checkAnswer('Answer4')">Answer1</button>
+            <div id="result"></div>
+        </section>
+
+
       </div>
     </main>
 
