@@ -71,11 +71,11 @@ ul {
   list-style-type: none;
 }
 
-.answerBtn,
-.answerBtn:active,
-.answerBtn:active:focus,
-.answerBtn:focus,
-.answerBtn:hover {
+.button,
+.button:active,
+.button:hover,
+.button:focus,
+.button:active:focus {
   background-color: green;
   box-shadow: none;
   outline: none;
