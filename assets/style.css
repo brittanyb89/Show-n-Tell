@@ -3,7 +3,7 @@
 :root {
   --main-bg-color: white;
   --secondary-bg-color: green;
-  --ternary-bg-color: powderblue;
+  --ternary-bg-color: rgb (185, 203, 206);
 }
 
 * {
