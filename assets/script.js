@@ -1,40 +1,24 @@
 // TODO: click start button, timer starts and first question is presented
 // Once test is started, first question appears with choices, and timer starts
-
+// Variables for time and score
 const timer = document.querySelector("quizTimer");
 const secondsRemaining = 75;
 
-// Start timer
-function startTimer(duration, display) {
-  const timer = duration, seconds;
-  setInterval( () => {
-    seconds = parseInt (timer % 60, 10);
+// Function for timer
+function setTimer() {
+  const timerInterval = setInterval( () => {
+    secondsRemaining--;
+    timer.textContent = `Time:${secondsRemaining}s`;
 
-    seconds = seconds <10 ? "0" + seconds : seconds;
+    if (secondsRemaining === 0 || questionCount === questions.length) {
+      clearInterval(timerInterval);
+      questionsNum1.style.display = "none";
+      finalAns.style.display = "block";
+      highScore.textContent = secondsRemaining;
 
-    display.textcontent = minutes + ":" + seconds;
-
-    if (--timer < 0) {
-      timer = duration;
     }
   }, 1000);
 }
-
-// window.onload = function () {
-//   let
-// }
-//     secondsRemaining--;
-//     timer.textContent = `Time:${secondsRemaining}s`;
-
-//     if (secondsRemaining === 0 || questionCount === questions.length) {
-//       clearInterval(timerInterval);
-//       questionsNum1.style.display = "none";
-//       finalAns.style.display = "block";
-//       highScore.textContent = secondsRemaining;
-
-//     }
-//   }, 1000);
-// }
 
 // TODO: once I answer the question, the next question is presented
 
