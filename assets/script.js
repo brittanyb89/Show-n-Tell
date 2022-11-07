@@ -37,13 +37,13 @@ const answerBtn3 = document.querySelector("#answer3");
 const answerBtn4 = document.querySelector("#answer4");
 
 // submit, finish, and view my score buttons
-const submitBtn = document.querySelector("submit");
+const saveBtn = document.querySelector("save");
 const finishBtn= document.querySelector("finish");
 const viewScore = document.querySelector("view_my_score")
 
 // event listener to activate start button
-startbtn.addEventListener("click", () => {
-  window.location.href="./pages/page1-Quiz/index.html";
+startBtn.addEventListener("click", () => {
+  window.location.href="./pages/page1-Quiz/quiz.html";
   console.log(button)
 });
 
