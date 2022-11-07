@@ -1,3 +1,12 @@
+// Start button will take user to next page with test questions
+const startBtn = document.querySelector("start");
+
+// event listener to activate start button
+startBtn.addEventListener("click", () => {
+  window.location.href="../pages/page1-Quiz/quiz.html";
+  console.log("start")
+});
+
 // Once test is started, first question appears with choices, and timer starts
 // Variables for time and score
 const timer = document.querySelector("quizTimer");
@@ -24,8 +33,7 @@ const highScores = document.querySelector("#high-scores");
 const scoreList = document. querySelector("#score-list");
 const newScore= [];
 
-// Start button will take user to next page with test questions
-const startBtn = document.querySelector("start");
+
 const backBtn = document.querySelector("back");
 const nextBtn = document.querySelector("next")
 
@@ -41,11 +49,12 @@ const saveBtn = document.querySelector("save");
 const finishBtn= document.querySelector("finish");
 const viewScore = document.querySelector("view_my_score")
 
-// event listener to activate start button
-startBtn.addEventListener("click", () => {
-  window.location.href="../pages/page1-Quiz/quiz.html";
-  console.log("start")
-});
+// start quiz
+// export const quiz = document.getElementById("quiz");
+// quiz.addEventListener("click", handleclick);
+
+
+
 
 // Question and answer objects
 const questions = [
