@@ -61,8 +61,8 @@ footer {
 #highscores,
 #results,
 #initials,
-#save,
-#
+#savebtn,
+#score-list,
  {
   display: none;
 }
