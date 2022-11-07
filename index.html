@@ -52,12 +52,13 @@
               <p class="max-auto max-w-prose">
                 To get the new highest score, answer as many random questions as you can correctly. Try and finish before the time runs out! Click start to begin. Good luck!
               </p>
-              <!-- When this button is clicked, it moves to new page to start quiz-->
+              <!-- click button to start quiz and timer-->
               <button id="startBtn" type="button" class="btn btn-primary">START NOW</button>
             </div>
           </div>
         </section>
 
+        <!-- hidden quiz questions -->
         <section id="startquiz" class="hidden">
           <div id="questions"><p>Q&A Placeholder</p></div>
             <button id="answer1" value="0" type="button" onclick="checkAnswer('Answer1')">Answer1</button>
@@ -69,12 +70,14 @@
             </div>
         </section>
 
+        <!-- end of game with final score and ability to save score and initials -->
         <section id="gameOver">
           <div id="finalScore"></div>
           <input type="text" size="50" placeholder="Enter your initials and new score!" name="initials" id="initials"/>
           <button id="save">Save</button>
         </section>
 
+        <!-- section for high scores -->
         <section id="scoreContainer">
         <div id="highScoresPage">
           <div id="scoreHeader">
@@ -84,6 +87,7 @@
           <div id="scoreInitials"></div>
           <div id="scoreScore"></div>
         </div>
+        <!-- buttons to restart game and clear score -->
         <div id="controlBtns">
           <button id="tryAgain" onclick="restartQuiz()">Try Again</button>
           <button id="clearScore" onclick="clearScore()">Clear Score</button>
