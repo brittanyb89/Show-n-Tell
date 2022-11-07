@@ -29,7 +29,21 @@ header {
 main {
   background-color: var(--main-bg-color);
   flex: auto;
-};
+}
+
+.container {
+  display: block;
+  height:auto;
+  margin: auto;
+  max-width: 1000px;
+  width: 90%;
+}
+
+footer {
+  align-items: baseline;
+  color: rgb(27, 26, 26);
+  font-size: 1em;
+}
 
 /* hidden questions */
 #questions,
