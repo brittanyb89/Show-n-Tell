@@ -1,14 +1,15 @@
 // HTML elements
 const startBtn = document.getElementById("start");
 const button = document.querySelector("input");
-const gameOver = document.getElementById("gameover");
+const gameOver = document.getElementById("gameOver");
 const quizStart = document.getElementById("startquiz");
 const startQuiz = document.getElementById("questions");
-const hiddenQues = document.getElementById("question");
-const renderQuestionResult = document.getElementById("results");
+const results = document.getElementById("questionResults");
 const finalScore = document.getElementById("final");
 const save = document.getElementById("saveBtn");
 const initials = document.getElementById("initials");
+const timer = document.getElementById("quizTimer");
+const  = document.getElementById("initials");
 
 // Start button activity
 

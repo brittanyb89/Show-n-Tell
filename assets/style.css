@@ -49,34 +49,33 @@ footer {
   font-size: 1em;
 }
 
-/* hidden questions */
+/* hidden items */
 #startquiz,
 #questions,
-#question,
 #answer1,
 #answer2,
 #answer3,
 #answer4,
-#final,
-#highscores,
-#results,
+#gameOver,
+#finalScore,
+#save,
+#highScorePage,
 #initials,
-#savebtn,
-#score-list,
+#scoreContainer,
+#scoreHeader,
+#scoreScore,
+#tryAgain,
+#clearScore,
  {
   display: none;
 }
 
-ul {
-  list-style-type: none;
-}
-
-.button,
-.button:active,
-.button:hover,
-.button:focus,
-.button:active:focus {
-  background-color: green;
+button,
+button:active,
+button:hover,
+button:focus,
+button:active:focus {
+  background-color: var(--secondary-bg-color);
   box-shadow: none;
   outline: none;
 }
