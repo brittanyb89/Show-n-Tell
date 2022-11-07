@@ -1,11 +1,12 @@
 // Start button will take user to next page with test questions
-const startBtn = document.querySelector("start");
+// const button = document.querySelector("start");
 
 // event listener to activate start button
-startBtn.addEventListener("click", () => {
-  window.location.href="../../pages/page1-Quiz/quiz.html";
-  console.log("start")
-})
+// button.addEventListener('click', () => ) {
+//   window.location.href="/../pages/page1-Quiz/quiz.html";
+//   console.log("button")
+// } );
+// };
 
 // Once test is started, first question appears with choices, and timer starts
 // Variables for time and score
