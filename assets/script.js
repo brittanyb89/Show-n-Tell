@@ -30,6 +30,10 @@ let quizQuestions = [{
   answer: 'console.log method'
 }
 ];
+
+function generateQuizQuestions() {
+
+}
 // Once test is started, first question appears with choices, and timer starts
 // Variables for time and score
 // $("#startClock").click(function () {
