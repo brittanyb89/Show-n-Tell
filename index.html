@@ -27,16 +27,18 @@
     <header class="container-fluid">
       <div class="row">
         <div class="col-6">
-          <button id="showHighScores" type="button" onclick="showScores()"  class="btn btn-secondary d-inline-block mt-1">High Scores</button>
+          <button id="High_Scores" type="button" class="btn btn-secondary d-inline-block mt-1">High Scores</button>
         </div>
         <div class="col-6">
           <a class="navbar-brand" href="#">
-            <img src="./assets/images/timer.png" alt="stopwatch" width="27" height="27" class="d-inline-block align-text-top" id="timer">
-            Remaining Time: 75s
+            <img src="./assets/images/timer.png" alt="stopwatch" width="27" height="27" class="d-inline-block align-text-top">Remaining Time: &nbsp; <span
+              id="seconds"
+              class="ml-2 text-lg font-medium"></span>
           </a>
         </div>
       </div>
     </header>
+
 <!-- Intro page: main section of page with image -->
     <main>
       <div class="container">
@@ -69,7 +71,25 @@
 
         <section id="gameOver">
           <div id="finalScore"></div>
+          <input type="text" size="50" placeholder="Enter your initials and new score!" name="initials" id="initials"/>
+          <button id="save">Save</button>
         </section>
+
+        <section id="scoreContainer">
+        <div id="highScoresPage">
+          <div id="scoreHeader">
+            <h3>User Initials</h3>
+            <h3>Score</h3>
+          </div>
+          <div id="scoreInitials"></div>
+          <div id="scoreScore"></div>
+        </div>
+        <div id="controlBtns">
+          <button id="tryAgain" onclick="restartQuiz()">Try Again</button>
+          <button id="clearScore" onclick="clearScore()">Clear Score</button>
+        </div>
+        </section>
+
       </div>
     </main>
 
