@@ -64,7 +64,7 @@ footer {
   display: none;
 };
 
-li.nobullets {
+ul {
   list-style-type: none;
 };
 
