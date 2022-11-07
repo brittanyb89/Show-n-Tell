@@ -45,16 +45,22 @@ h1 {
 
 footer {
   align-items: baseline;
-  color: rgb(27, 26, 26);
+  color: black;
   font-size: 1em;
 }
 
 /* hidden questions */
 #startquiz,
 #questions,
-#final_answer,
-#high_scores,
-#correctwrong {
+#question,
+#answer1,
+#answer2,
+#answer3,
+#answer4,
+#final,
+#highscores,
+#correctwrong,
+ {
   display: none;
 };
 
