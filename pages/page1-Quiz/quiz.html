@@ -38,9 +38,20 @@
     </header>
 
 <!-- Get timer to start (Javascript) and display first question while the others are hidden-->
-<body>
-  <main class="flex flex-col items-center gap-y-4">
-    <h1>Please answer the following question:</h1>
+    <main>
+      <div class="container">
+        <section id="intro">
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+              <img src="../../assets/images/owl.jpg" alt="owl" width="250" height="250">
+              <h1>Hurry! Time is ticking!</h1>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
 <!-- Hidden until the quiz starts (leave empty for javascript)-->
     <section id="startquiz" class="hidden">
       <h2></h2>

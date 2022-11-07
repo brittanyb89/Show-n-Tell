@@ -39,6 +39,10 @@ main {
   width: 90%;
 }
 
+h1 {
+ align-items: center;
+}
+
 footer {
   align-items: baseline;
   color: rgb(27, 26, 26);
