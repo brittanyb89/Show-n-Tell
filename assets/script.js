@@ -1,20 +1,51 @@
-// TODO: click start button, timer starts and first question is presented
+// HTML elements
+const startBtn = document.getElementById("start")
+const quizStart = document.getElementById("startquiz");
+const quizQuestion = document.getElementById("questions");
+const hiddenQues = document.getElementById("question");
+const renderQuestionResult = document.getElementById("results");
+const finalScore = document.getElementById("final");
+const save = document.getElementById("saveBtn");
+const initials = document.getElementById("initials");
+
+// Quiz questions
+let quizQuestions = [{
+  question: " ____ is a high-level dynamic programming language that allows users to interact with websites.",
+  choices: ["1. Booleans", "2. JavaScript", "3. CSS", "4. Node.js"],
+  answer: 'JavaScript',
+},
+{
+  question: "Commonly used data types do NOT include:",
+  choices: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
+  answer: 'booleans',
+},
+{
+  question: "_____ ____ are used to create conditions and control how a program behaves when certain things happen. They are usually denoted true and false inside of quotes.",
+  choices: ["1. Boolean values", "2. String values", "3. Node values", "4. Number values"],
+  answer: 'Boolean values',
+},
+{
+  question: "What method is used to output a message to web console by adding an argument?",
+  choices: ["1. Git method", "2. CSS method", "3. console.log method", "4. Javascript method"],
+  answer: 'console.log method'
+}
+];
 // Once test is started, first question appears with choices, and timer starts
 // Variables for time and score
-$("#startClock").click(function () {
-  let timer = 75;
-  setInterval(function () {
-    timer--;
-    if (timer >= 0) {
-      span = document.getElementById("seconds");
-      span.innerHTML = timer;
-    }
-    if (timer === 0) {
-      alert('Time is up!');
-      clearInterval(timer);
-    }
-  }, 1000);
-});
+// $("#startClock").click(function () {
+//   let counter = 5;
+//   setInterval(function () {
+//     counter--;
+//     if (counter >= 0) {
+//       span = document.getElementById("seconds");
+//       span.innerHTML = counter;
+//     }
+//     if (counter === 0) {
+//       alert('Time is up!');
+//       clearInterval(counter);
+//     }
+//   }, 1000);
+// });
 // const timer = document.querySelector("quizTimer");
 // const secondsRemaining = 75;
 
@@ -32,6 +63,24 @@ $("#startClock").click(function () {
 
 //     }
 //   }, 1000);
+// }
+
+// start quiz
+// const quiz = document.getElementById("quiz");
+// quiz.addEventListener("click", handleClick);
+
+// function handleClick(event) {
+//   const isCorrectAnswer = isCorrect(event);
+
+//   renderQuestionResult (isCorrectAnswer);
+//   if (!isCorrectAnswer) {
+//     TiME_LIMIT -= 15;
+//   }
+//   if (currentQuestionI < questions.length - 1) {
+//     currentQuestionI++;renderNxtQuestion();
+//   } else {
+//     renderEndScreen();
+//   }
 // }
 
 // TODO: once I answer the question, the next question is presented
@@ -78,41 +127,6 @@ $("#startClock").click(function () {
 // const saveBtn = document.querySelector("save");
 // const finishBtn= document.querySelector("finish");
 // const viewScore = document.querySelector("view_my_score")
-
-// start quiz
-// export const quiz = document.getElementById("quiz");
-// quiz.addEventListener("click", handleclick);
-
-
-
-
-// Question and answer objects
-// const questions = [
-//   {
-//     question:"Commonly used data types do NOT include:",
-//     answers: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
-//     correctAnswers: "2"
-//   },
-//   {
-    // Question #1
-  //   question: " ____ is a high-level dynamic programming language that allows users to interact with websites."
-  //   answers: ["1. Booleans", "2. JavaScript", "3. CSS", "4. Node.js"],
-  //   correctAnswers: "2"
-  // },
-  // { // Question #2
-  //   question: "What method is used to output a message to web console by adding an argument?"
-  //   answers: ["1. Git method", "2. CSS method", "3. console.log method", "4. Javascript method"],
-  //   correctAnswers: "3"
-  // },
-  // {
-    // Question #3
-//     question: "_____ ____ are used to create conditions and control how a program behaves when certain things happen. They are usually denoted true and false inside of quotes."
-//     answers: ["1. Boolean values", "2. String values", "3. Node values", "4. Number values"],
-//     correctAnswers: "1"
-//   }
-// ];
-
-
 
 // Quiz starts with timer and question
 // function startbtn() {
