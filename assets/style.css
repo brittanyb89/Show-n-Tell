@@ -1,9 +1,9 @@
 @import url ("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 
 :root {
-  --main-bg-color: powderblue;
+  --main-bg-color: white;
   --secondary-bg-color: green;
-  --ternary-bg-color: white;
+  --ternary-bg-color: powderblue;
 }
 
 * {
