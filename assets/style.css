@@ -59,14 +59,14 @@ footer {
 #answer4,
 #final,
 #highscores,
-#correctwrong,
+#results,
  {
   display: none;
-};
+}
 
 ul {
   list-style-type: none;
-};
+}
 
 .answerBtn,
 .answerBtn:active,
@@ -76,7 +76,7 @@ ul {
   background-color: green;
   box-shadow: none;
   outline: none;
-};
+}
 
 /* media query to allow adjustment to screen on mobile, desktop, tablet, etc. */
 @media screen and (max-width:650px) html {
