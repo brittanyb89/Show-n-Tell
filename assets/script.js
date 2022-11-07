@@ -1,12 +1,18 @@
 // HTML elements
-const startBtn = document.getElementById("start")
+const startBtn = document.getElementById("start");
+const button = document.querySelector("input");
+const gameOver = document.getElementById("gameover");
 const quizStart = document.getElementById("startquiz");
-const quizQuestion = document.getElementById("questions");
+const startQuiz = document.getElementById("questions");
 const hiddenQues = document.getElementById("question");
 const renderQuestionResult = document.getElementById("results");
 const finalScore = document.getElementById("final");
 const save = document.getElementById("saveBtn");
 const initials = document.getElementById("initials");
+
+// Start button activity
+
+
 
 // Quiz questions
 let quizQuestions = [{
@@ -31,9 +37,24 @@ let quizQuestions = [{
 }
 ];
 
-function generateQuizQuestions() {
+// start quiz
+// const quiz = document.getElementById("quiz");
+// quiz.addEventListener("click", handleClick);
 
-}
+// function handleClick(event) {
+//   const isCorrectAnswer = isCorrect(event);
+
+//   renderQuestionResult (isCorrectAnswer);
+//   if (!isCorrectAnswer) {
+//     TiME_LIMIT -= 15;
+//   }
+//   if (currentQuestionI < questions.length - 1) {
+//     currentQuestionI++;renderNxtQuestion();
+//   } else {
+//     renderEndScreen();
+//   }
+// }
+
 // Once test is started, first question appears with choices, and timer starts
 // Variables for time and score
 // $("#startClock").click(function () {
@@ -69,23 +90,7 @@ function generateQuizQuestions() {
 //   }, 1000);
 // }
 
-// start quiz
-// const quiz = document.getElementById("quiz");
-// quiz.addEventListener("click", handleClick);
 
-// function handleClick(event) {
-//   const isCorrectAnswer = isCorrect(event);
-
-//   renderQuestionResult (isCorrectAnswer);
-//   if (!isCorrectAnswer) {
-//     TiME_LIMIT -= 15;
-//   }
-//   if (currentQuestionI < questions.length - 1) {
-//     currentQuestionI++;renderNxtQuestion();
-//   } else {
-//     renderEndScreen();
-//   }
-// }
 
 // TODO: once I answer the question, the next question is presented
 
