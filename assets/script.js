@@ -43,8 +43,8 @@ const viewScore = document.querySelector("view_my_score")
 
 // event listener to activate start button
 startBtn.addEventListener("click", () => {
-  window.location.href="./pages/page1-Quiz/quiz.html";
-  console.log(start)
+  window.location.href="../pages/page1-Quiz/quiz.html";
+  console.log("start")
 });
 
 // Question and answer objects
