@@ -1,24 +1,38 @@
 // TODO: click start button, timer starts and first question is presented
 // Once test is started, first question appears with choices, and timer starts
 // Variables for time and score
-const timer = document.querySelector("quizTimer");
-const secondsRemaining = 75;
-
-// Function for timer
-function setTimer() {
-  const timerInterval = setInterval( () => {
-    secondsRemaining--;
-    timer.textContent = `Time:${secondsRemaining}s`;
-
-    if (secondsRemaining === 0 || questionCount === questions.length) {
-      clearInterval(timerInterval);
-      questionsNum1.style.display = "none";
-      finalAns.style.display = "block";
-      highScore.textContent = secondsRemaining;
-
+$("#startClock").click(function () {
+  let timer = 75;
+  setInterval(function () {
+    timer--;
+    if (timer >= 0) {
+      span = document.getElementById("seconds");
+      span.innerHTML = timer;
+    }
+    if (timer === 0) {
+      alert('Time is up!');
+      clearInterval(timer);
     }
   }, 1000);
-}
+});
+// const timer = document.querySelector("quizTimer");
+// const secondsRemaining = 75;
+
+// // Function for timer
+// function setTimer() {
+//   const timerInterval = setInterval( () => {
+//     secondsRemaining--;
+//     timer.textContent = `Time:${secondsRemaining}s`;
+
+//     if (secondsRemaining === 0 || questionCount === questions.length) {
+//       clearInterval(timerInterval);
+//       questionsNum1.style.display = "none";
+//       finalAns.style.display = "block";
+//       highScore.textContent = secondsRemaining;
+
+//     }
+//   }, 1000);
+// }
 
 // TODO: once I answer the question, the next question is presented
 
