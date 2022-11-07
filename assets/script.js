@@ -2,31 +2,32 @@
 // Variables for time and score
 const timer = document.querySelector("quizTimer");
 const secondsRemaining = 75;
-const highScore = document.querySelector("#score");
 
 // Question section
-const questionsNum1 = document.querySelector("#question1");
-const questionNum1 = document.querySelector("#question");
+const questions1 = document.querySelector("#questions1");
+const question1 = document.querySelector("#question1");
 
 // Number of questions answered
 const questionCount = 0;
 
 // div correct/wrong
-const correctWrong = document.querySelector("#yes_or_no");
+const results = document.querySelector("#results");
 
 // section for final section
-const finalAns = document.querySelector("#finished");
+const final = document.querySelector("#final");
 
 // User initals input
 const initialsInput = document.querySelector("#initals");
 
 // final score section
-const highScores = document.querySelector("#highscores");
-const newScores = document. querySelector("#new-score");
+const highScores = document.querySelector("#high-scores");
+const scoreList = document. querySelector("#score-list");
 const newScore= [];
 
 // Start button will take user to next page with test questions
-const startbtn = document.querySelector("button");
+const startBtn = document.querySelector("start");
+const backBtn = document.querySelector("back");
+const nextBtn = document.querySelector("next")
 
 // Answer buttons
 const answerbtns = document.querySelectorAll("answerbtns");
