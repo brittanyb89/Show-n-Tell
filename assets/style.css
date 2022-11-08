@@ -51,11 +51,6 @@ footer {
 
 /* hidden items */
 #startquiz,
-#questions,
-#answer1,
-#answer2,
-#answer3,
-#answer4,
 #gameOver,
 #finalScore,
 #save,
@@ -65,7 +60,7 @@ footer {
 #scoreHeader,
 #scoreScore,
 #tryAgain,
-#clearScore,
+#clearScore
  {
   display: none;
 }

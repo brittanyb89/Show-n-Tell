@@ -60,11 +60,11 @@
 
         <!-- hidden quiz questions -->
         <section id="startquiz" class="hidden">
-          <div id="questions"><p>Q&A Placeholder</p></div>
-            <button id="answer1" value="0" type="button" onclick="checkAnswer('Answer1')">Answer1</button>
-            <button id="answer2" value="1" type="button" onclick="checkAnswer('Answer2')">Answer2</button>
-            <button id="answer3" value="2" type="button" onclick="checkAnswer('Answer3')">Answer3</button>
-            <button id="answer4" value="3" type="button" onclick="checkAnswer('Answer4')">Answer4</button>
+          <div id="questions"><p id="quesAndAns" onclick="myQuiz()"></p></div>
+            <button id="answer1" value="JavaScript" type="button" onclick="checkAnswer('Answer1')" class="possibleAns">Answer1</button>
+            <button id="answer2" value="1" type="button" onclick="checkAnswer('Answer2')" class="possibleAns">Answer2</button>
+            <button id="answer3" value="2" type="button" onclick="checkAnswer('Answer3')" class="possibleAns">Answer3</button>
+            <button id="answer4" value="3" type="button" onclick="checkAnswer('Answer4')" class="possibleAns">Answer4</button>
             <div id="results" class="font-weight-light font-semibold">
               <hr>
             </div>
