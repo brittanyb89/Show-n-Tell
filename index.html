@@ -14,29 +14,23 @@
     crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <title>Show 'N' Tell Code Quiz</title>
 
-    <!--Added favicon-->
-    <link rel="icon" type="image/x-icon" href="./assets/images/owl.jpg">
 
   </head>
 <!-- Intro and timer in navbar -->
   <body>
     <header class="container-fluid">
-      <div class="row">
-        <div class="col-6">
-          <button id="High_Scores" type="button" class="btn btn-secondary d-inline-block mt-1">High Scores</button>
-        </div>
-        <div class="col-6">
+        <!-- <div class="col-6">
           <a class="navbar-brand" href="#">
             <img src="./assets/images/timer.png" alt="stopwatch" width="27" height="27" class="d-inline-block align-text-top">Remaining Time: &nbsp; <span
               id="seconds"
               class="ml-2 text-lg font-medium"></span>
           </a>
         </div>
-      </div>
+      </div> -->
     </header>
 
 <!-- Intro page: main section of page with image -->
@@ -44,38 +38,36 @@
       <div class="container">
 
         <section id="intro">
-          <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-              <img src="./assets/images/owl.jpg" alt="owl" width="450" height="450">
-              <h1>READY....SET.....GOOOO!</h1>
+
               <p class="max-auto max-w-prose">
                 To get the new highest score, answer as many random questions as you can correctly. Try and finish before the time runs out! Click start to begin. Good luck!
               </p>
               <!-- click button to start quiz and timer-->
               <button id="startBtn" type="button" class="btn btn-primary">START NOW</button>
-            </div>
-          </div>
         </section>
 
         <!-- hidden quiz questions -->
         <section id="startquiz" class="hidden">
           <div id="questions"><p id="quesAndAns" onclick="myQuiz()"></p></div>
-            <button id="answer1" value="JavaScript" type="button" onclick="checkAnswer('Answer1')" class="possibleAns">Answer1</button>
-            <button id="answer2" value="1" type="button" onclick="checkAnswer('Answer2')" class="possibleAns">Answer2</button>
-            <button id="answer3" value="2" type="button" onclick="checkAnswer('Answer3')" class="possibleAns">Answer3</button>
-            <button id="answer4" value="3" type="button" onclick="checkAnswer('Answer4')" class="possibleAns">Answer4</button>
+            <button id="answer1" value="JavaScript" type="button" onclick="checkAnswer(this)" class="possibleAns">Answer1</button>
+            <button id="answer2" value="1" type="button" onclick="checkAnswer(this)" class="possibleAns">Answer2</button>
+            <button id="answer3" value="2" type="button" onclick="checkAnswer(this)" class="possibleAns">Answer3</button>
+            <button id="answer4" value="3" type="button" onclick="checkAnswer(this)" class="possibleAns">Answer4</button>
             <div id="results" class="font-weight-light font-semibold">
               <hr>
             </div>
         </section>
 
         <!-- end of game with final score and ability to save score and initials -->
+       <div id="endingscreen" class="hidden">
+
+
         <section id="gameOver">
           <div id="finalScore"></div>
           <input type="text" size="50" placeholder="Enter your initials and new score!" name="initials" id="initials"/>
-          <button id="save">Save</button>
+          <button id="save" onclick="saveScore()">Save</button>
         </section>
+
 
         <!-- section for high scores -->
         <section id="scoreContainer">
@@ -87,13 +79,10 @@
           <div id="scoreInitials"></div>
           <div id="scoreScore"></div>
         </div>
-        <!-- buttons to restart game and clear score -->
-        <div id="controlBtns">
-          <button id="tryAgain" onclick="restartQuiz()">Try Again</button>
-          <button id="clearScore" onclick="clearScore()">Clear Score</button>
-        </div>
-        </section>
 
+
+        </section>
+      </div>
       </div>
     </main>
 
@@ -111,3 +100,11 @@
   <script src="./assets/script.js"></script>
   </body>
 </html>
+
+<!--
+
+
+
+
+
+7. then i am able to retrieve all names  -->

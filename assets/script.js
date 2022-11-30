@@ -3,81 +3,89 @@ const startBtn = document.getElementById("startBtn");
 const button = document.querySelector("input");
 const gameOver = document.getElementById("gameOver");
 const quizStart = document.getElementById("startquiz");
-// const startQuiz = document.getElementById("questions");
 const results = document.getElementById("questionResults");
 const finalScore = document.getElementById("final");
 const save = document.getElementById("saveBtn");
 const initials = document.getElementById("initials");
 const timer = document.getElementById("quizTimer");
-const  answer1= document.getElementById("1");
-const  answer2= document.getElementById("2");
-const  answer3= document.getElementById("3");
-const  answer4= document.getElementById("4");
-const  intro= document.getElementById("intro");
-const quizEl = document.querySelector('.quiz');
+const answer1 = document.getElementById("answer1");
+const answer2 = document.getElementById("answer2");
+const answer3 = document.getElementById("answer3");
+const answer4 = document.getElementById("answer4");
+const intro = document.getElementById("intro");
+const quizEl = document.querySelector(".quiz");
+const endingscreen = document.getElementById("endingscreen");
+const scoreInitials = document.getElementById("scoreInitials");
+
 let currentQuestion = 0;
 let submitted = false;
 const questionNum = 0;
-const correctAnswer = [2, 2, 1, 3]
+const correctAnswer = [2, 2, 1, 3];
+const highScores = JSON.parse(localStorage.getItem("highscores")) || [];
 
 // Quiz questions
-let quizQuestions = [{
-  question: " ____ is a high-level dynamic programming language that allows users to interact with websites.",
-  choices: ["1. Booleans", "2. JavaScript", "3. CSS", "4. Node.js"],
-  answer: 'JavaScript',
-},
-{
-  question: "Commonly used data types do NOT include:",
-  choices: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
-  answer: 'booleans',
-},
-{
-  question: "_____ ____ are used to create conditions and control how a program behaves when certain things happen. They are usually denoted true and false inside of quotes.",
-  choices: ["1. Boolean values", "2. String values", "3. Node values", "4. Number values"],
-  answer: 'Boolean values',
-},
-{
-  question: "What method is used to output a message to web console by adding an argument?",
-  choices: ["1. Git method", "2. CSS method", "3. console.log method", "4. Javascript method"],
-  answer: 'console.log method'
-}
+let quizQuestions = [
+  {
+    question:
+      " ____ is a high-level dynamic programming language that allows users to interact with websites.",
+    choices: ["Booleans", "JavaScript", "CSS", "Node.js"],
+    answer: "JavaScript",
+  },
+  {
+    question: "Commonly used data types do NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "booleans",
+  },
+  {
+    question:
+      "_____ ____ are used to create conditions and control how a program behaves when certain things happen. They are usually denoted true and false inside of quotes.",
+    choices: [
+      "Boolean values",
+      "String values",
+      "Node values",
+      "Number values",
+    ],
+    answer: "Boolean values",
+  },
+  {
+    question:
+      "What method is used to output a message to web console by adding an argument?",
+    choices: [
+      "Git method",
+      "CSS method",
+      "console.log method",
+      "Javascript method",
+    ],
+    answer: "console.log method",
+  },
 ];
 
 const finalQuestionIndex = quizQuestions.length;
-const currentQuestionIndex = 0;
+let currentQuestionIndex = 0;
 const timeLeft = 75;
-const score = 0;
+let score = 0;
+
+function showScore() {
+  endingscreen.style.display = "block";
+  quizStart.style.display = "none";
+  gameOver.style.display = "block";
+}
 
 // start quiz
 startBtn.addEventListener("click", startQuiz);
 
 // add click event to button and hides start button
-function startQuiz (event) {
+function startQuiz(event) {
   intro.style.display = "none";
   quizStart.style.display = "block";
-}
-
-// sorts through array to generate questions and answers to quiz
-function generateQuizQuestion(){
-  gameOver.style.display = "none";
-  if (currentQuestionIndex === finalQuestionIndex){
-      return showScore();
-  }
-  var currentQuestion = quizQuestions[currentQuestionIndex];
-  startBtn.innerHTML = "<p>" + currentQuestion.quizQuestions + "</p>";
-  answer1.innerHTML = currentQuestion.choices;
-  answer2.innerHTML = currentQuestion.choices;
-  answer3.innerHTML = currentQuestion.choices;
-  answer4.innerHTML = currentQuestion.choices;
-};
-
-// Start Quiz function starts timer and displays the first quiz question.
-function quizQuestion1(event){
-  gameOver.style.display = "none";
-  startQuiz.style.display = "none";
   generateQuizQuestion();
 }
 
+// Start Quiz function starts timer and displays the first quiz question.
+function quizQuestion1(event) {
+  startQuiz.style.display = "none";
+  generateQuizQuestion();
+}
 
 // const answerBtns = document.getElementsByClassName("possibleAns");
 // // ansBtn.addEventListener("click", handleClick);
@@ -118,58 +126,61 @@ function quizQuestion1(event){
 // });
 
 // function to set questions
-function quiz(id) {
-  if (id < questions.length) {
-    results.textContent = questions[id].question;
-    answer1.textContent = questions [id].answers[0];
-    answer2.textContent = questions [id].answers[1];
-    answer3.textContent = questions [id].answers[2];
-    answer4.textContent = questions [id].answers[3];
-  }
-}
-
-
-function generateQuizQuestion(){
-  gameOver.style.display = "none";
-  if (currentQuestionIndex === finalQuestionIndex){
-        return showScore();
-  }
-  let currentQuestion = quizQuestions[currentQuestionIndex];
-  questions.innerHTML = "quesAndAns" + currentQuestion.question;
-  answer1.innerHTML = currentQuestion.choices;
-  answer2.innerHTML = currentQuestion.choices;
-  answer3.innerHTML = currentQuestion.choices;
-  answer4.innerHTML = currentQuestion.choices;
-}
-
-
-// checks the answer to each question
-// function checkAnswer(event) {
-//   correct = quizQuestions[currentQuestionIndex].correctAnswer;
-
-//   if (questions === correct && currentQuestionIndex !== finalQuestionIndex) {
-//     score++;
-//     alert("Correct!");
-//     currentQuestionIndex++;
-//     generateQuizQuestion();
-//   } else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
-//     alert("Incorrect!");
-//     currentQuestionIndex++;
-//     generateQuizQuestion();
-//   } else {
-//     showScore();
+// function quiz(id) {
+//   if (id < questions.length) {
+//     results.textContent = questions[id].question;
+//     answer1.textContent = questions [id].answers[0];
+//     answer2.textContent = questions [id].answers[1];
+//     answer3.textContent = questions [id].answers[2];
+//     answer4.textContent = questions [id].answers[3];
 //   }
 // }
 
+function generateQuizQuestion() {
+  gameOver.style.display = "none";
+  if (currentQuestionIndex === finalQuestionIndex) {
+    return showScore();
+  }
+  let currentQuestion = quizQuestions[currentQuestionIndex];
+  questions.innerHTML = currentQuestion.question;
+  console.log(currentQuestion);
+  answer1.innerHTML = currentQuestion.choices[0];
+  answer2.innerHTML = currentQuestion.choices[1];
+  answer3.innerHTML = currentQuestion.choices[2];
+  answer4.innerHTML = currentQuestion.choices[3];
+}
+
+// checks the answer to each question
+function checkAnswer(button) {
+  correct = quizQuestions[currentQuestionIndex].answer;
+  const clickedAnswer = button.innerHTML;
+  console.log(clickedAnswer);
+  if (
+    clickedAnswer === correct &&
+    currentQuestionIndex !== finalQuestionIndex
+  ) {
+    score++;
+    alert("Correct!");
+    currentQuestionIndex++;
+    generateQuizQuestion();
+  } else if (
+    clickedAnswer !== correct &&
+    currentQuestionIndex !== finalQuestionIndex
+  ) {
+    alert("Incorrect!");
+    currentQuestionIndex++;
+    generateQuizQuestion();
+  } else {
+    showScore();
+  }
+}
 
 // checks answer and move on to the question
 // function checkAnswer(event) {
 //   event.preventDefault();
 // }
 
-
-
-  //   if (questions[questionCount].correctAnswers === event.target.value) {
+//   if (questions[questionCount].correctAnswers === event.target.value) {
 //     p.textContent = "Correct!";
 //   } else if (questions[questionCount].correctAnswers !== event.target.value) {
 //     secondsRemaining = secondsRemaining - 10;
@@ -185,8 +196,6 @@ function generateQuizQuestion(){
 //     p.style.display = "none";
 //   }, 1000);
 
-
-
 // function handleClick(event) {
 //   const isCorrectAnswer = isCorrect(event);
 
@@ -201,17 +210,12 @@ function generateQuizQuestion(){
 //   }
 // }
 
-
-
-
 // answerBtn1.forEach(item => {
 //   item.addEventListener('click', checkAnswer);
 // });
 
 // div correct/wrong
 // const results = document.querySelector("#results");
-
-
 
 // Once test is started, first question appears with choices, and timer starts
 // Variables for time and score
@@ -248,8 +252,6 @@ function generateQuizQuestion(){
 //   }, 1000);
 // }
 
-
-
 // TODO: once I answer the question, the next question is presented
 
 // TODO: for the wrong answer, time is decducted from clock
@@ -257,25 +259,6 @@ function generateQuizQuestion(){
 // TODO: game is over when all questions are answered or the timer reaches 0
 
 // TODO: when game is over, save initials and score
-
-
-
-// Number of questions answered
-// const questionCount = 0;
-
-// final score section
-// const highScores = document.querySelector("#high-scores");
-// const scoreList = document. querySelector("#score-list");
-// const newScore= [];
-
-
-// const backBtn = document.querySelector("back");
-// const nextBtn = document.querySelector("next")
-
-// submit, finish, and view my score buttons
-// const saveBtn = document.querySelector("save");
-// const finishBtn= document.querySelector("finish");
-// const viewScore = document.querySelector("view_my_score")
 
 // Quiz starts with timer and question
 // function startbtn() {
@@ -286,53 +269,23 @@ function generateQuizQuestion(){
 //   setQuestion(questionCount);
 // }
 
-
 // set function to add score
-// function addScore(event) {
-//   event.preventDefault();
-
-//   finalAns.style.display ='none';
-//   newScore.style.display = 'block';
-
-//   const init = initialsInput.value.toUpperCase();
-//   highScore.push ({ initials: init, score: secondsRemaining});
-
-//   highScore = highScore.ariaSort((a, b) => {
-//     if (a.score > b.score) {
-//       return 1;
-//     } else {
-//       return -1;
-//     }
-//   });
-
-//   highScore.innerHTML="";
-//   for (let i = 0; i < highScore.length; i++) {
-//     let li = document.createElement("li");
-//     li.textContent = `${highScore[i].initials}: ${highScore[i].score}`;
-//     highScore.append(li);
-//   }
-
-//   storeScores();
-//   displayScores();
-// }
-
-// function storeScores() {
-//   localStorage.setItem("highscores", JSON.stringify(highScore));
-// }
-
-// function displayScores() {
-//   const storedHighScores = JSON.parse(localStorage.getItem("highScores"));
-//   if(storedHighScores !== null) {
-//     highScore = storedHighScores;
-//   }
-// }
+function saveScore() {
+  const newName = initials.value;
+  console.log(newName);
+  highScores.push({ initials: newName, score: score });
+  localStorage.setItem("highscores", JSON.stringify(highScores));
+  for (let i = 0; i < highScores.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = `${highScores[i].initials}: ${highScores[i].score}`;
+    scoreInitials.append(li);
+  }
+}
 
 // function clearScores() {
 //   localStorage.clear();
 //   highScore.innerHTML="";
 // }
-
-
 
 // submitBtn.addEventListener('click', addScore);
 
