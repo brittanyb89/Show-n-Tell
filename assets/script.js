@@ -87,55 +87,6 @@ function quizQuestion1(event) {
   generateQuizQuestion();
 }
 
-// const answerBtns = document.getElementsByClassName("possibleAns");
-// // ansBtn.addEventListener("click", handleClick);
-// function pickedAns (event) {
-//   console.log(this.value)
-// }
-// answerBtns.forEach(button =>{
-//   button.addEventListener("click", pickedAns);
-// })
-// let answerBtns = document.getElementsByClassName("possibleAns");
-//   answerBtns.forEach(function(button) {
-//     button.addEventListener("click", pickedAns);
-//   });
-
-//   const selectedAns =[];
-
-// let possibleAns = function () {
-//   if (questionNum >= questions.length) {
-//     return;
-//   }
-// }
-
-// const selectedOption = parseInt(this.getAttribute ('onclick'));
-// selectedAns.push(selectedOption);
-// questionNum += 1;
-// // update next question
-// quizQuestions.textContent = questions[questionNum];
-// displayQuestion(questionNum);
-
-// for (var i = 0; i < elements.length; i++) {
-//   elements[i].addEventListener('click', clickOption);
-// }
-// button.addEventListener("click", function() {
-//   timer();
-//   displayQuestion(questionNum);
-//   button.style.visibility = "hidden";
-//   startBtn.style.visibility = "visible";
-// });
-
-// function to set questions
-// function quiz(id) {
-//   if (id < questions.length) {
-//     results.textContent = questions[id].question;
-//     answer1.textContent = questions [id].answers[0];
-//     answer2.textContent = questions [id].answers[1];
-//     answer3.textContent = questions [id].answers[2];
-//     answer4.textContent = questions [id].answers[3];
-//   }
-// }
-
 function generateQuizQuestion() {
   gameOver.style.display = "none";
   if (currentQuestionIndex === finalQuestionIndex) {
@@ -175,22 +126,18 @@ function checkAnswer(button) {
   }
 }
 
-// checks answer and move on to the question
-// function checkAnswer(event) {
-//   event.preventDefault();
-// }
-
-//   if (questions[questionCount].correctAnswers === event.target.value) {
-//     p.textContent = "Correct!";
-//   } else if (questions[questionCount].correctAnswers !== event.target.value) {
-//     secondsRemaining = secondsRemaining - 10;
-//     p.textContent = "Wrong!";
-//   }
-//   if (questionCount < questions.length) {
-//     questionCount++;
-//   }
-//   setQuestion(questionCount);
-// }
+// set function to add score
+function saveScore() {
+  const newName = initials.value;
+  console.log(newName);
+  highScores.push({ initials: newName, score: score });
+  localStorage.setItem("highscores", JSON.stringify(highScores));
+  for (let i = 0; i < highScores.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = `${highScores[i].initials}: ${highScores[i].score}`;
+    scoreInitials.append(li);
+  }
+}
 
 //   setTimeout( () => {
 //     p.style.display = "none";
@@ -252,14 +199,6 @@ function checkAnswer(button) {
 //   }, 1000);
 // }
 
-// TODO: once I answer the question, the next question is presented
-
-// TODO: for the wrong answer, time is decducted from clock
-
-// TODO: game is over when all questions are answered or the timer reaches 0
-
-// TODO: when game is over, save initials and score
-
 // Quiz starts with timer and question
 // function startbtn() {
 //   questionNum1.style.display = "block";
@@ -268,19 +207,6 @@ function checkAnswer(button) {
 //   setTimer();
 //   setQuestion(questionCount);
 // }
-
-// set function to add score
-function saveScore() {
-  const newName = initials.value;
-  console.log(newName);
-  highScores.push({ initials: newName, score: score });
-  localStorage.setItem("highscores", JSON.stringify(highScores));
-  for (let i = 0; i < highScores.length; i++) {
-    let li = document.createElement("li");
-    li.textContent = `${highScores[i].initials}: ${highScores[i].score}`;
-    scoreInitials.append(li);
-  }
-}
 
 // function clearScores() {
 //   localStorage.clear();
