@@ -33,7 +33,7 @@ let quizQuestions = [
   {
     question: "Commonly used data types do NOT include:",
     choices: ["strings", "booleans", "alerts", "numbers"],
-    answer: "booleans",
+    answer: "alerts",
   },
   {
     question:
