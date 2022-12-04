@@ -1,4 +1,3 @@
-// HTML elements
 const startBtn = document.getElementById("startBtn");
 const button = document.querySelector("input");
 const gameOver = document.getElementById("gameOver");
