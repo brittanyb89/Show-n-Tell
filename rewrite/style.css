@@ -1,3 +1,79 @@
 .hidden {
   display: none;
 }
+
+:root {
+  --main-bg-color: white;
+  --secondary-bg-color: rgb(64, 155, 64);
+  --ternary-bg-color: rgb(138, 181, 224);
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: black;
+  font-size: 1em;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 20px;
+  height: 100%;
+}
+
+img {
+  height: auto;
+  margin: 1em;
+  max-width: 100%;
+  padding: 1em;
+}
+
+header {
+  background-color: var(--ternary-bg-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  align-items: center;
+}
+
+button {
+  background-color: var(--secondary-bg-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 1em;
+  padding: 1em;
+}
+
+.container {
+  display: block;
+  height: auto;
+  margin: auto;
+  max-width: 1000px;
+  width: 90%;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  align-items: baseline;
+  color: black;
+  font-size: 1em;
+}
+
+/* media query to allow adjustment to screen on mobile, desktop, tablet, etc. */
+@media screen and (max-width: 650px) html {
+  font-size: 12px;
+}
