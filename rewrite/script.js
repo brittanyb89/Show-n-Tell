@@ -97,13 +97,6 @@ document.getElementById("startBtn").addEventListener("click", function () {
   document.getElementById("intro").style.display = "none";
 });
 
-// add click event to button and hides start button
-// function startQuiz(event) {
-//   intro.style.display = "none";
-//   quizStart.style.display = "block";
-//   generateQuizQuestion();
-// }
-
 function quizQuestion1(event) {
   startQuiz.style.display = "none";
   generateQuizQuestion();
@@ -160,91 +153,3 @@ function saveScore() {
     scoreInitials.append(li);
   }
 }
-
-// // Timer to start when quiz starts or when start button is clicked
-// function setTimer() {
-//   // Timer counts down from 75 seconds
-//   let timer = 75;
-//   let timeInterval = setInterval(function () {
-//     timer--;
-//     // Timer stops when it reaches 0
-//     document.getElementById("quizTimer").textContent = timer;
-//     if (timer === 0) {
-//       clearInterval(timeInterval);
-//       gameOver();
-//     }
-//   }, 1000);
-// }
-
-// // Timer to subtract 15 seconds if answer is incorrect
-// function subtractTime() {
-//   timer -= 15;
-// }
-
-//   setTimeout( () => {
-//     p.style.display = "none";
-//   }, 1000);
-
-// function handleClick(event) {
-//   const isCorrectAnswer = isCorrect(event);
-
-//   renderQuestionResult (isCorrectAnswer);
-//   if (!isCorrectAnswer) {
-//     TiME_LIMIT -= 15;
-//   }
-//   if (currentQuestionIndex < questions.length - 1) {
-//     currentQuestionIndex++;renderNxtQuestion();
-//   } else {
-//     renderEndScreen();
-//   }
-// }
-
-// answerBtn1.forEach(item => {
-//   item.addEventListener('click', checkAnswer);
-// });
-
-// div correct/wrong
-// const results = document.querySelector("#results");
-
-// Once test is started, first question appears with choices, and timer starts
-// Variables for time and score
-// $("#startClock").click(function () {
-//   let counter = 5;
-//   setInterval(function () {
-//     counter--;
-//     if (counter >= 0) {
-//       span = document.getElementById("seconds");
-//       span.innerHTML = counter;
-//     }
-//     if (counter === 0) {
-//       alert('Time is up!');
-//       clearInterval(counter);
-//     }
-//   }, 1000);
-// });
-// const timer = document.querySelector("quizTimer");
-// const secondsRemaining = 75;
-
-// Function for timer
-// function setTimer() {
-//   const timerInterval = setInterval(() => {
-//     secondsRemaining--;
-//     timer.textContent = `Time:${secondsRemaining}s`;
-
-//     if (secondsRemaining === 0 || questionCount === questions.length) {
-//       clearInterval(timerInterval);
-//       questionsNum1.style.display = "none";
-//       finalAns.style.display = "block";
-//       highScore.textContent = secondsRemaining;
-//     }
-//   }, 1000);
-// }
-
-// Quiz starts with timer and question
-// function startbtn() {
-//   questionNum1.style.display = "block";
-//   questionCount = 0;
-
-//   setTimer();
-//   setQuestion(questionCount);
-// }
