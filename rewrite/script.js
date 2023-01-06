@@ -2,8 +2,8 @@ const startBtn = document.getElementById("startBtn");
 const button = document.querySelector("input");
 const gameOver = document.getElementById("gameOver");
 const quizStart = document.getElementById("startquiz");
-// const results = document.getElementById("questionResults");
-// const finalScore = document.getElementById("final");
+const results = document.getElementById("questionResults");
+const finalScore = document.getElementById("final");
 const saveBtn = document.getElementById("saveBtn");
 const initials = document.getElementById("initials");
 const timer = document.getElementById("quizTimer");
@@ -12,7 +12,7 @@ const answer2 = document.getElementById("answer2");
 const answer3 = document.getElementById("answer3");
 const answer4 = document.getElementById("answer4");
 const intro = document.getElementById("intro");
-// const quizEl = document.querySelector(".quiz");
+const quizEl = document.querySelector(".quiz");
 const endingscreen = document.getElementById("endingscreen");
 const scoreInitials = document.getElementById("scoreInitials");
 
@@ -101,7 +101,6 @@ function generateQuizQuestion() {
   }
   let currentQuestion = quizQuestions[currentQuestionIndex];
   questions.innerHTML = currentQuestion.question;
-  console.log(currentQuestion);
   answer1.innerHTML = currentQuestion.choices[0];
   answer2.innerHTML = currentQuestion.choices[1];
   answer3.innerHTML = currentQuestion.choices[2];
@@ -112,7 +111,6 @@ function generateQuizQuestion() {
 function checkAnswer(button) {
   let correct = quizQuestions[currentQuestionIndex].answer;
   const clickedAnswer = button.innerHTML;
-  console.log(clickedAnswer);
   if (
     clickedAnswer === correct &&
     currentQuestionIndex !== finalQuestionIndex
@@ -134,7 +132,7 @@ function checkAnswer(button) {
 }
 
 // final score
-function finalScore() {
+function getFinalScore() {
   quizStart.style.display = "none";
   gameOver.style.display = "block";
   finalScore.innerHTML = `Your final score is ${score}`;
@@ -143,7 +141,6 @@ function finalScore() {
 // set function to save score
 function saveScore() {
   const newName = initials.value;
-  console.log(newName);
   highScores.push({ initials: newName, score: score });
   localStorage.setItem("highscores", JSON.stringify(highScores));
   for (let i = 0; i < highScores.length; i++) {
