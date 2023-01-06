@@ -62,17 +62,14 @@ let quizQuestions = [
 const finalQuestionIndex = quizQuestions.length;
 let currentQuestionIndex = 0;
 let timeLeft = 75;
-let score = 0;
+let score = "";
 let clickedAnswer = "";
 
-function showScore() {
-  endingscreen.style.display = "block";
-  quizStart.style.display = "none";
-  gameOver.style.display = "block";
-}
-
-// start timer
+// start timer and quiz
 document.getElementById("startBtn").addEventListener("click", function () {
+  document.getElementById("startquiz").style.display = "block";
+  document.getElementById("intro").style.display = "none";
+
   let timeLeft = 75;
 
   let timer = setInterval(function () {
@@ -89,15 +86,10 @@ document.getElementById("startBtn").addEventListener("click", function () {
       timeLeft -= 15;
     }
   }, 1000);
+  generateQuizQuestion();
 });
 
-// start quiz, removes intro, and displays quiz
-document.getElementById("startBtn").addEventListener("click", function () {
-  document.getElementById("startquiz").style.display = "block";
-  document.getElementById("intro").style.display = "none";
-});
-
-function quizQuestion1(event) {
+function generateQuizQuestion1() {
   startQuiz.style.display = "none";
   generateQuizQuestion();
 }
@@ -118,7 +110,7 @@ function generateQuizQuestion() {
 
 // checks the answer to each question
 function checkAnswer(button) {
-  correct = quizQuestions[currentQuestionIndex].answer;
+  let correct = quizQuestions[currentQuestionIndex].answer;
   const clickedAnswer = button.innerHTML;
   console.log(clickedAnswer);
   if (
@@ -136,12 +128,19 @@ function checkAnswer(button) {
     alert("Incorrect!");
     currentQuestionIndex++;
     generateQuizQuestion();
-  } else {
+  } else if (currentQuestionIndex === finalQuestionIndex) {
     showScore();
   }
 }
 
-// set function to add score
+// final score
+function finalScore() {
+  quizStart.style.display = "none";
+  gameOver.style.display = "block";
+  finalScore.innerHTML = `Your final score is ${score}`;
+}
+
+// set function to save score
 function saveScore() {
   const newName = initials.value;
   console.log(newName);
