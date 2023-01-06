@@ -20,6 +20,8 @@ let currentQuestion = 0;
 let submitted = false;
 const questionNum = 0;
 const correctAnswer = [2, 2, 1, 3];
+
+// saved high scores
 const highScores = JSON.parse(localStorage.getItem("highscores")) || [];
 
 // Quiz questions
@@ -61,15 +63,11 @@ let quizQuestions = [
 
 const finalQuestionIndex = quizQuestions.length;
 let currentQuestionIndex = 0;
-let timeLeft = 75;
-let score = "";
+let score = 0;
 let clickedAnswer = "";
 
-// start timer and quiz
+// start timer
 document.getElementById("startBtn").addEventListener("click", function () {
-  document.getElementById("startquiz").style.display = "block";
-  document.getElementById("intro").style.display = "none";
-
   let timeLeft = 75;
 
   let timer = setInterval(function () {
@@ -80,19 +78,34 @@ document.getElementById("startBtn").addEventListener("click", function () {
       clearInterval(timer);
       document.getElementById("countDown").innerHTML = "Time is up!";
     } else if (currentQuestionIndex === finalQuestionIndex) {
-      clearInterval(timer);
       document.getElementById("countDown").innerHTML = "Finish!";
-    } else if (clickedAnswer !== correctAnswer) {
+    } else if (clickedAnswer === !correctAnswer) {
       timeLeft -= 15;
     }
   }, 1000);
+
   generateQuizQuestion();
 });
 
-function generateQuizQuestion1() {
+// start quiz, removes intro, and displays quiz
+document.getElementById("startBtn").addEventListener("click", function () {
+  startquiz.style.display = "block";
+  intro.style.display = "none";
+});
+
+function getQuizQuestion1(event) {
   startQuiz.style.display = "none";
   generateQuizQuestion();
 }
+
+function showScore() {
+  endingscreen.style.display = "block";
+  quizStart.style.display = "none";
+  gameOver.style.display = "block";
+
+  getFinalScore();
+}
+
 //  function to generate quiz questions
 function generateQuizQuestion() {
   gameOver.style.display = "none";
@@ -109,7 +122,7 @@ function generateQuizQuestion() {
 
 // checks the answer to each question
 function checkAnswer(button) {
-  let correct = quizQuestions[currentQuestionIndex].answer;
+  correct = quizQuestions[currentQuestionIndex].answer;
   const clickedAnswer = button.innerHTML;
   if (
     clickedAnswer === correct &&
@@ -126,19 +139,20 @@ function checkAnswer(button) {
     alert("Incorrect!");
     currentQuestionIndex++;
     generateQuizQuestion();
-  } else if (currentQuestionIndex === finalQuestionIndex) {
+  } else {
     showScore();
   }
 }
 
-// final score
+// generate final score from remaining time
 function getFinalScore() {
-  quizStart.style.display = "none";
-  gameOver.style.display = "block";
-  finalScore.innerHTML = `Your final score is ${score}`;
+  const score = JSON.parse(localStorage.getItem("score"))?.sort(
+    (a, b) => b - a
+  );
+  return score || [];
 }
 
-// set function to save score
+// set function to add score
 function saveScore() {
   const newName = initials.value;
   highScores.push({ initials: newName, score: score });
